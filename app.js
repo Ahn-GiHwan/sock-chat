@@ -3,8 +3,13 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const path = require("path");
+const socketio = require("socket.io");
 
 const port = 3000;
+
+const io = socketio(server);
+
+require("./socket")(io);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
