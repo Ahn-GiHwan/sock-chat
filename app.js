@@ -2,8 +2,12 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
+const path = require("path");
 
 const port = 3000;
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 const indexRouter = require("./routes/index");
 const clubsRouter = require("./routes/clubs");
