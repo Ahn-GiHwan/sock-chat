@@ -13,9 +13,11 @@ app.use("/public", express.static(__dirname + "/public"));
 
 const indexRouter = require("./routes/index");
 const clubsRouter = require("./routes/clubs");
+const chatRouter = require("./routes/chat");
 
 app.use("/", indexRouter);
 app.use("/clubs", clubsRouter);
+app.use("/chat", chatRouter);
 
 server.listen(port, () => {
   console.log(`Express Server us now listening on localhost:${port}..`);
